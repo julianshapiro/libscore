@@ -217,18 +217,15 @@ MongoClient.connect(MONGO_URL, function(err, db) {
       async.parallel({
         count: function(callback) {
           var query = {};
-          query[type] = new RegExp(name, 'i');
+          query[type] = name;
           collection.find(query, { limit: crawls.length, sort: [['crawlTime', 'desc']] }).toArray(function(err, results) {
-            if (results.length > 0) {
-              name = results[0][type];
-            }
             callback(err, _.pluck(results, 'count'));
           });
         },
         sites: function(callback) {
           var key = (type === 'library') ? 'libraries.name' : 'scripts.name';
           var query = { crawlTime: mostRecentCrawlTime };
-          query[key] = new RegExp(name, 'i');
+          query[key] = name;
           sitesCollection.find(query, {limit: limit, sort: [['rank', 'asc']]}).toArray(function(err, sites) {
             var sites = _.map(sites, function (site) {
               return {
@@ -242,7 +239,6 @@ MongoClient.connect(MONGO_URL, function(err, db) {
         }
       }, function(err, results) {
         callback(err, {
-          name: name,
           count: results.count,
           sites: results.sites,
           github: '',
