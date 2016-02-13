@@ -6,31 +6,14 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="css/normalize.css" rel="stylesheet">
 	<link href="css/main.css" rel="stylesheet">
+	<link href="css/compare.css" rel="stylesheet">
 	<link href="css/tooltips.css" rel="stylesheet">
 	<meta name="description" content="Libscore scans the top million sites on the web to collect stats on JavaScript library usage.">
 
-	<link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-touch-icon-57x57.png">
-	<link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-touch-icon-60x60.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-touch-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-touch-icon-76x76.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-touch-icon-114x114.png">
-	<link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-touch-icon-120x120.png">
-	<link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-touch-icon-144x144.png">
-	<link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-touch-icon-152x152.png">
-	<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon-180x180.png">
-	<link rel="icon" type="image/png" href="favicon/favicon-32x32.png" sizes="32x32">
-	<link rel="icon" type="image/png" href="favicon/favicon-194x194.png" sizes="194x194">
-	<link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96">
-	<link rel="icon" type="image/png" href="favicon/android-chrome-192x192.png" sizes="192x192">
-	<link rel="icon" type="image/png" href="favicon/favicon-16x16.png" sizes="16x16">
-	<link rel="manifest" href="favicon/manifest.json">
-	<meta name="apple-mobile-web-app-title" content="Libscore">
-	<meta name="application-name" content="Libscore">
-	<meta name="msapplication-TileColor" content="#ffffff">
-	<meta name="msapplication-TileImage" content="favicon/mstile-144x144.png">
-	<meta name="theme-color" content="#ffffff">
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
-<body>
+<body class="results compare">
 	<div id="searchSymbols"></div>
 
 	<div id="searchWrap">
@@ -72,21 +55,6 @@
 				<p class="popover">You can also query <span id="script-tip">scripts</span> and <span id="domain-tip">domain names</span></p>	
 			</div>
 		</main>
-
-		<!-- <form 
-			id="subscribe_"
-			class="field hint--right"
-			action="//libscore.us9.list-manage.com/subscribe/post?u=30c0d4c5d64d5d9fcf7b76792&amp;id=69666fd115" method="post" name="mc-embedded-subscribe-form"
-			target="_blank"
-			novalidate
-		>
-
-			<input type="text" name="b_30c0d4c5d64d5d9fcf7b76792_69666fd115" tabindex="-1" style="position: absolute; left: -1000000px">
-			<div>
-				<p>Get notified when a new library surges in popularity!</p>
-				<input id="subscribe" name="EMAIL" class="field-input" type="text" placeholder="Enter Email Address" />
-			</div>
-		</form> -->
 	</div>
 
 	<footer>
@@ -105,17 +73,13 @@
 		</div>
 	</footer> 
 
-	<div id="data_scroll"></div>
-
 	<div id="data-lib">
-		<!-- <a href="#" class="closePanel">Open Results</a> -->
 		<div class="center-header">
 			<h3 id="data-name"></h3>
 			<div class="badge-container"></div>
 		</div>
 		<div id="time-series">
 			<div class="chartHolder"></div>
-			<h3 class="bigNumber"></h3>
 		</div>
 		<div class="bottomCompare">
 			<h3>Compare against another library or script</h3>
@@ -124,16 +88,9 @@
 				<input type="text" placeholder="Enter another library to compare this one against">
 			</form>
 		</div>
-		<!-- <a class="close">Close Results</a> -->
 	</div>
 
-	<div id="data">
-		<a href="#" class="showChart"><span>Show Chart</span></a>
-		<div id="col_wrap">
-			<div id="data_cols"></div>
-		</div>
-		<table></table>
-	</div>
+
 
 	<script src="js/jquery.min.js"></script>
 	<script src="js/velocity.min.js"></script>
@@ -142,7 +99,7 @@
 	<script src="js/numeral.min.js"></script>
 	<script src="js/jquery.tooltipster.min.js"></script>
 	<script src="js/highcharts.js"></script>
-	<script src="js/script.js"></script>
+	<script src="js/compare.js"></script>
 	<script src="js/dropdown.js"></script>
 
 	<script>
